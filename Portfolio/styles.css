@@ -1,0 +1,570 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1; /* Light pink background */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.wrapper {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url('flo.gif') no-repeat center center/cover; 
+}
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1050px;
+    width: 100%;
+    text-align: left; /* Align text to the left */
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 40px; /* Add padding to the left for spacing */
+    z-index: 2; 
+    animation: burst 1s ease-out forwards;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(-50%, -50%) scale(0); /* Initially scaled down to 0 */
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Scaled up to 1 */
+        opacity: 1;
+    }
+}
+
+.content::before {
+    content: "";
+    background-image: url('canvaedit1.png'); /* Replace with your image URL */
+    background-size: cover; /* Cover the entire container */
+    background-position: center;
+    background-repeat: no-repeat; /* Center the background image */
+    position: absolute;
+    filter: blur(1px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.big-word {
+    font-size: 2em; /* Adjust the size as needed */
+    color: rgb(11, 11, 11);
+}
+.name{
+    text-transform: uppercase;
+}
+.name{
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(11, 11, 11);
+    margin-right: 20%;
+    white-space: nowrap;
+}
+.designation{
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(11, 11, 11);
+    margin-right: 20%;
+    white-space: nowrap;
+}
+
+.name span, .designation span {
+    opacity: 0;
+    animation: appear 0ms  forwards;
+}
+
+/* Animation delays for each span */
+.name span:nth-child(1) { animation-delay: 0.5s; }
+.name span:nth-child(2) { animation-delay: 1s; }
+.name span:nth-child(3) { animation-delay: 1.5s; }
+.name span:nth-child(4) { animation-delay: 2s; }
+.name span:nth-child(5) { animation-delay: 2.5s; }
+.name span:nth-child(6) { animation-delay: 3s; }
+.name span:nth-child(7) { animation-delay: 3.5s; }
+.name span:nth-child(8) { animation-delay: 4s; }
+.name span:nth-child(9) { animation-delay: 4.5s; }
+.name span:nth-child(10) { animation-delay: 5s; }
+.name span:nth-child(11) { animation-delay: 5.5s; }
+.name span:nth-child(12) { animation-delay: 6s; }
+.name span:nth-child(13) { animation-delay: 6.5s; }
+.name span:nth-child(14) { animation-delay: 7s; }
+.name span:nth-child(15) { animation-delay: 7.5s; }
+.name span:nth-child(16) { animation-delay: 8s; }
+
+.designation span:nth-child(1) { animation-delay: 8.5s; }
+.designation span:nth-child(2) { animation-delay: 9s; }
+.designation span:nth-child(3) { animation-delay: 9.5s; }
+.designation span:nth-child(4) { animation-delay: 10s; }
+.designation span:nth-child(5) { animation-delay: 10.5s; }
+.designation span:nth-child(6) { animation-delay: 11s; }
+.designation span:nth-child(7) { animation-delay: 11.5s; }
+.designation span:nth-child(8) { animation-delay: 12s; }
+.designation span:nth-child(9) { animation-delay: 12.5s; }
+.designation span:nth-child(10) { animation-delay: 13s; }
+.designation span:nth-child(11) { animation-delay: 13.5s; }
+.designation span:nth-child(12) { animation-delay: 14s; }
+.designation span:nth-child(13) { animation-delay: 14.5s; }
+.designation span:nth-child(14) { animation-delay: 15s; }
+.designation span:nth-child(15) { animation-delay: 15.5s; }
+.designation span:nth-child(16) { animation-delay: 16s; }
+.designation span:nth-child(17) { animation-delay: 16.5s; }
+.designation span:nth-child(18) { animation-delay: 17s; }
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+.tagline {
+    font-size: 1em;
+    margin: 10px 0;
+    color: rgb(11, 11, 11);
+    animation: breathe 3s infinite alternate;
+}
+@keyframes breathe {
+    0% {
+        font-size: 1em;
+    }
+    50% {
+        font-size: 1.05em; /* Icrease font size */
+    }
+    100% {
+        font-size: 1em; /* Back to original font size */
+    }
+}
+
+.social-icons {
+    display: flex; /* Ensure icons are displayed in a row */
+    text-align: left;
+}
+
+.social-icons a {
+    color: rgb(11, 11, 11);
+    font-size: 1.22em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bb5; /* LinkedIn color */
+    transform: scale(2);
+}
+
+.social-icons a:nth-child(2):hover {
+    color: #e1306c; /* Instagram color */
+    transform: scale(2);
+}
+
+.social-icons a:nth-child(3):hover {
+    color: #057523; /* Facebook color */
+    transform: scale(2);
+}
+.social-icons a:nth-child(4):hover {
+    color: #0a0a0a; /* Facebook color */
+    transform: scale(2);
+}
+.social-icons a:nth-child(5):hover {
+    color: #c54343; /* Facebook color */
+    transform: scale(2);
+}
+.container1 {
+   position: absolute;
+    top: calc(50% + 500px);  /*Adjust the top position accordingly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1050px;
+    height: 460px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(233, 221, 229, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: 100%;
+    z-index: 1; /* Ensure the "Introduction" container appears below */
+    animation: burst 1s ease-out forwards;
+}
+
+.content1 {
+    display: flex;
+}
+.bio {
+  
+    font-size: 22px;
+    line-height: 1.5;
+    width: 68%; /* Adjust the width to accommodate both the image and the content */
+    margin-right: 2%; /* Add some space between the image and the content */
+}
+#bio-t{
+    line-height: 2; 
+    word-spacing: 0.2em;
+}
+.about {
+    margin-bottom: 10px;
+    white-space: pre-wrap; 
+    margin-left: 45%;
+    font-style: initial;
+}
+
+
+.intro-image {
+    position: relative;
+    width: 32%;
+    height: 50%; /* Set the height of the intro-image to occupy half of the container's height */
+    top: 0;
+    left: -1%;
+    object-fit: cover;
+   
+}
+
+.intro-image img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make the image fill the intro-image container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    /* Initial state for the animation */
+    transform: translateX(-100%);
+    transition: transform 2s ease; /* Add transition effect */
+    }
+  
+    .intro-image img.reveal {
+        transform: translateX(0); /* Final state of the animation */
+    }
+
+    .container2 {
+        position: absolute;
+        top: calc(50% + 500px + 540px);  /* Adjust the top position accordingly */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1050px;
+        height: 460px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(233, 221, 229, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        z-index: 1; /* Ensure the "Introduction" container appears below */
+        animation: burst 6s ease-out forwards;
+    }
+    .skills-heading {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        margin-left: 500px;
+        margin-top: 5px;
+        animation: burst 1s ease-out forwards;
+        
+    }
+    .flashcards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        grid-template-rows: repeat(2, 1fr); /* 2 rows */
+        gap: 10px; /* Add some gap between the flashcards */
+        height: 90%; /* Make sure the grid takes the full height of the container */
+    }
+    
+    .flashcard {
+        background-color: white; /* Background color for flashcards */
+        border-radius: 5px; /* Slightly rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        transition: transform 0.2s, box-shadow 0.2s; /* Animation for hover effect */
+    }
+    
+    .flashcard img {
+        width: 50px; /* Adjust the size of the icons */
+        height: 50px; /* Adjust the size of the icons */
+        margin-bottom: 10px;
+        transition: filter 0.2s; /* Transition for color change */
+    }
+    
+    .flashcard .skill-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+        transition: color 0.2s;
+    }
+    
+    .flashcard .percentage {
+        font-size: 1em;
+        color: #333;
+        transition: color 0.2s; 
+    }
+    
+    .flashcard:hover {
+        transform: scale(1.05); /* Zoom in slightly on hover */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        background-color: black;
+    }
+    .flashcard:hover .skill-name,
+    .flashcard:hover .percentage {
+        color: white; /* Change text color to white */
+    }
+    
+    .projects-heading {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        margin-left: 500px;
+        margin-top: 5px;
+        animation: burst 1s ease-out forwards;
+    }
+    
+    .container3 {
+        position: absolute;
+        top: calc(50% + 1620px); /* Adjust the top position accordingly */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1050px;
+        height: 600px;
+        margin: 20px auto;
+        margin-bottom: 1000px;
+        padding: 20px;
+        background-color: rgba(233, 221, 229, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        z-index: 1; /* Ensure the "Projects" container appears below */
+        animation: burst 8s ease-out forwards;
+    }
+    
+    .flashcards-grid-projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 10px; /* Add some gap between the flashcards */
+        height: 95%; /* Make sure the grid takes the full height of the container */
+    }
+    
+    .container3 p{
+        line-height: 200%;
+    }
+    .resume-button {
+        text-align: center;
+        margin-top: 0px;
+       
+    }
+    
+    .resume-button button {
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        background-color: #f0f2f5;
+        width: 100%;
+        margin-top: -10%;
+        height: 100%;
+        color: rgb(6, 6, 6);
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .resume-button button:hover {
+        background-color: #0b0b0b;
+        color: white;
+    }
+    
+    .resume-button button i {
+        margin-right: 10px;
+    }
+.container4{
+    position: absolute;
+    top: calc(50% + 2000px); /* Adjust the top position accordingly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    height: 60px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(233, 221, 229, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 1; /* Ensure the "Projects" container appears below */
+    animation: burst 10s ease-out forwards;
+}    
+    
+.container5 {
+    position: absolute;
+    top: calc(50% + 2330px); /* Adjust the top position accordingly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    height: auto;
+    margin: 20px auto;
+    padding: 20px;
+   /* background-color: rgba(233, 221, 229, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+    width: 100%;
+    z-index: 1; /* Ensure the "Projects" container appears below */
+    animation: burst 10s ease-out forwards;
+    text-align: center;
+}
+
+.container5 hr {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-color: #ccc;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    height: 150px;
+}
+
+input[type="submit"] {
+    background-color: #f7f8fa;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #040404;
+    color: white;
+}
+
+.container5 .social-icons {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.container6 {
+    position: absolute;
+    top: calc(50% + 2630px); /* Adjust the top position accordingly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the "Projects" container appears below */
+;
+    text-align: center;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #040404;
+}
+
+
+@media (max-width: 768px) {
+    .container, .container1, .container2, .container3, .container4, .container5 {
+        padding: 10px;
+        max-width: 95%;
+    }
+
+    .bio {
+        font-size: 18px;
+    }
+
+    .skills-heading, .projects-heading {
+        font-size: 1.2em;
+    }
+
+    .name, .designation {
+        font-size: 1.5em;
+    }
+
+    .intro-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .social-icons a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .bio {
+        font-size: 16px;
+    }
+
+    .skills-heading, .projects-heading {
+        font-size: 1em;
+    }
+
+    .name, .designation {
+        font-size: 1.2em;
+    }
+
+    .intro-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .social-icons a {
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
